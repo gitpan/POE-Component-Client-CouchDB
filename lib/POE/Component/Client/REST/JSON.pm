@@ -2,6 +2,8 @@ package POE::Component::Client::REST::JSON;
 use JSON;
 use Moose;
 
+our $VERSION = '0.03';
+
 extends q(POE::Component::Client::REST);
 
 sub cook_request {
@@ -29,6 +31,10 @@ __END__
 =head1 NAME
 
 POE::Component::Client::REST::JSON - Low-level interface for JSON REST calls
+
+=head1 VERSION
+
+Version 0.03
 
 =head1 SYNOPSIS
 

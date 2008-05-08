@@ -1,5 +1,10 @@
 Revision history for POE-Component-Client-CouchDB
 
+0.03    May 8 2008
+        Reversioned everything per suggestion from confound, versions from
+        here forward will all be the same (use perl-reversion --bump from
+        Perl::Version)
+
 0.02    May 7 2008
         Fixed a bug in the test that was causing it to fail instead of skip
         with no HTTP test server

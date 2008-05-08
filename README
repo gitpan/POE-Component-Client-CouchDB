@@ -1,5 +1,11 @@
 POE-Component-Client-CouchDB
 
+VERSION
+
+This document describes version 0.03 of the distribution.
+
+SYNOPSIS
+
 Asynchronous (POE based) communication with a CouchDB, in a similar style to
 Net::CouchDb.
 

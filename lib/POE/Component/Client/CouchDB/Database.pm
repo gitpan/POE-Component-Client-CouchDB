@@ -2,6 +2,8 @@ package POE::Component::Client::CouchDB::Database;
 use Moose;
 use JSON;
 
+our $VERSION = 0.03;
+
 has couch => (
   is       => 'ro',
   isa      => 'POE::Component::Client::CouchDB',
@@ -97,6 +99,10 @@ __END__
 =head1 NAME
 
 POE::Component::Client::CouchDB::Database 
+
+=head1 VERSION
+
+Version 0.03
 
 =head1 SYNOPSIS
 

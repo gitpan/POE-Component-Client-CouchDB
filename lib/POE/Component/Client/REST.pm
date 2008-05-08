@@ -3,7 +3,7 @@ use POE qw(Component::Client::HTTP);
 use Moose;
 use HTTP::Request;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 has Alias => (
   is      => 'ro',
@@ -122,7 +122,7 @@ POE::Component::Client::REST - Low-level interface for REST calls
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 

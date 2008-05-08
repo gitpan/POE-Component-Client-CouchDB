@@ -1,7 +1,6 @@
 use inc::Module::Install;
 
 name     'POE-Component-Client-CouchDB';
-version  '0.02';
 all_from 'lib/POE/Component/Client/CouchDB.pm';
 author   'Paul Driver <frodwith@cpan.org>';
 
