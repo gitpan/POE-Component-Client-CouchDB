@@ -3,7 +3,7 @@ use POE qw(Component::Client::HTTP);
 use Moose;
 use HTTP::Request;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has Alias => (
   is      => 'ro',
@@ -118,11 +118,11 @@ __END__
 
 =head1 NAME
 
-POE::Component::Client::REST::JSON - Low-level interface for REST calls
+POE::Component::Client::REST - Low-level interface for REST calls
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 

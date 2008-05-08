@@ -1,12 +1,15 @@
-use Test::More tests => 2;
-use HTTP::Server::Simple::Dispatched;
+use Test::More;
 use JSON;
 
-eval "use HTTP::Server::Simple::Dispatched";
-plan skip_all => "HTTP::Server::Simple::Dispatched required to test against"
-  if $@;
-
 BEGIN {
+  eval "use HTTP::Server::Simple::Dispatched";
+  if ($@) {
+    plan skip_all => "HTTP::Server::Simple::Dispatched required for testing";
+    exit;
+  }
+  else {
+    plan tests => 2;
+  }
 	use_ok( 'POE::Component::Client::REST::JSON' );
 }
 
