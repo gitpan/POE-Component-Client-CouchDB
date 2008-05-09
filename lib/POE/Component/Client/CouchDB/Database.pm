@@ -2,7 +2,7 @@ package POE::Component::Client::CouchDB::Database;
 use Moose;
 use JSON;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 has couch => (
   is       => 'ro',
@@ -102,7 +102,7 @@ POE::Component::Client::CouchDB::Database
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
@@ -182,7 +182,7 @@ Probably.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Paul Driver, all rights reserved.
+Copyright 2008 Paul Driver
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

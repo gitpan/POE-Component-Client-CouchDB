@@ -2,7 +2,7 @@ package POE::Component::Client::CouchDB;
 use POE qw(Component::Client::REST::JSON);
 use Moose;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has rest => (
   is      => 'ro',
@@ -72,7 +72,7 @@ POE::Component::Client::CouchDB - Asynchronous CouchDB server interaction
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
@@ -150,6 +150,10 @@ Returns a new L<POE::Component::Client::CouchDB::Database> representing the
 database with the specified name.  This method does not follow the REST
 calling conventions, cause it's not a REST call!
 
+=item shutdown
+
+Equivalent to $obj->rest->shutdown();
+
 =back
 
 =head1 AUTHOR
@@ -162,7 +166,7 @@ Probably.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Paul Driver, all rights reserved.
+Copyright 2008 Paul Driver
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

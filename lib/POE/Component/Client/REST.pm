@@ -3,7 +3,7 @@ use POE qw(Component::Client::HTTP);
 use Moose;
 use HTTP::Request;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has Alias => (
   is      => 'ro',
@@ -122,7 +122,7 @@ POE::Component::Client::REST - Low-level interface for REST calls
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
@@ -243,7 +243,7 @@ other purposes.  Patches welcome!
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Paul Driver, all rights reserved.
+Copyright 2008 Paul Driver
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
