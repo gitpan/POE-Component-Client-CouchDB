@@ -20,5 +20,7 @@ META.yml
 README
 t/00-load.t
 t/01-rest-json-synopsis.t
+t/02-attachment.t
+t/lib/POE/Component/Client/REST/Test/HTTP.pm
 t/pod-coverage.t
 t/pod.t

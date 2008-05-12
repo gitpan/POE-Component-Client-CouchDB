@@ -2,7 +2,7 @@ package POE::Component::Client::CouchDB::Database;
 use Moose;
 use JSON;
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 has couch => (
   is       => 'ro',
@@ -60,7 +60,7 @@ sub delete : method {
 
 sub attachment {
   my ($self, $id, $name, @opt) = @_;
-  $self->call(GET => "$id/$name", @opt);
+  $self->call(GET => "$id/$name", response_cooker => undef, @opt);
 }
 
 sub create_design {
@@ -102,7 +102,7 @@ POE::Component::Client::CouchDB::Database
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =head1 SYNOPSIS
 

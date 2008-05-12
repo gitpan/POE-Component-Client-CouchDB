@@ -2,7 +2,7 @@ package POE::Component::Client::REST::JSON;
 use JSON;
 use Moose;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 extends q(POE::Component::Client::REST);
 
@@ -34,7 +34,7 @@ POE::Component::Client::REST::JSON - Low-level interface for JSON REST calls
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =head1 SYNOPSIS
 

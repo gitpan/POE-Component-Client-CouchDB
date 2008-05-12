@@ -2,7 +2,7 @@ package POE::Component::Client::CouchDB;
 use POE qw(Component::Client::REST::JSON);
 use Moose;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 has rest => (
   is      => 'ro',
@@ -72,7 +72,7 @@ POE::Component::Client::CouchDB - Asynchronous CouchDB server interaction
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =head1 SYNOPSIS
 

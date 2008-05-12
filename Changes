@@ -1,5 +1,11 @@
 Revision history for POE-Component-Client-CouchDB
 
+0.05    May 12 2008
+        Eliminated dependancy on HTTP::Server::Simple::Dispatched for testing,
+        we now use a mocked up Client::HTTP object that returns what we tell
+        it to.  Also fixed document attachments not to cook their responses
+        and added a test for that bug case.
+
 0.04    May 9 2008
         Updated the pod-coverage test to not fail for some things it was
         failing for - CountParents is now on, and BUILD and DEMOLISH are

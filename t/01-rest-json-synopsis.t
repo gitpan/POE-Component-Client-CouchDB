@@ -1,31 +1,12 @@
-use Test::More;
-use JSON;
+BEGIN {push(@INC, 't/lib')}
+use Test::More tests => 1;
+use POE::Component::Client::REST::Test::HTTP qw(json_responder);
 
-BEGIN {
-  eval "use HTTP::Server::Simple::Dispatched";
-  if ($@) {
-    plan skip_all => "HTTP::Server::Simple::Dispatched required for testing";
-    exit;
-  }
-  else {
-    plan tests => 2;
-  }
-	use_ok( 'POE::Component::Client::REST::JSON' );
-}
-
-my $server = HTTP::Server::Simple::Dispatched->new(
-  port => 5984,
-  dispatch => [
-    qr{^/_all_dbs$} => sub {
-      my $response = shift;
-      $response->content_type('application/json');
-      $response->content(encode_json(['foo', 'bar', 'baz']));
-      return 1;
-    }
-  ]
+my $tester = POE::Component::Client::REST::Test::HTTP->new(
+  responses => [
+    qr{^/_all_dbs$} => json_responder([qw(foo bar baz)]),
+  ],
 );
-
-my $pid = $server->background();
 
     use POE::Component::Client::REST::JSON;
     use POE;
@@ -35,7 +16,11 @@ my $pid = $server->background();
     POE::Session->create(inline_states => {
       _start => sub {
         $poe_kernel->alias_set('foo');
+
         my $rest = $_[HEAP]->{rest} = POE::Component::Client::REST::JSON->new;
+
+$tester->replace($rest);
+
         $rest->call(GET => 'http://localhost:5984/_all_dbs', callback =>
           [$_[SESSION], 'response']);
       },
@@ -47,7 +32,6 @@ my $pid = $server->background();
 #       print 'Databases: ' . join(', ', @$data) . "\n";
         $poe_kernel->alias_remove('foo');
         $_[HEAP]->{rest}->shutdown();
-kill TERM => $pid;
 ok($data->[0] eq 'foo' && $data->[1] eq 'bar' && $data->[2] eq 'baz',
   "Correct output");
       },
